@@ -1,0 +1,60 @@
+﻿@{
+    //ViewData["Title"] = "Home Page";
+    //var musicas = ViewData["musicas"];
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">SPOTIFY</h1>
+    <p>
+      <h1>Minhas músicas</h1>
+     
+      <ul class="list-group">
+       @foreach(var m in ViewBag.musicas ){
+            <li class="list-group-item">
+                
+                <div class="row text-left">
+                
+                <div class="col-3">
+                    
+                      <img src="/img/speaker.png" alt="" class="img-thumbnail">
+                    
+                </div>
+
+                <div class="col-9" >
+                    <div class="">
+                       @m.Titulo 
+                    </div>
+                    <div class="">
+                       @m.Autor
+                    </div>
+                    <div class="">
+                        @m.Letra 
+                     </div>
+                   
+                    </div>
+                </div>
+
+                <div class="row d-block text-center">
+                
+                  <div clas="col-12">
+                    <audio controls >
+                        <source src="@m.UrlStr" type="audio/ogg">
+                        <source src="@m.UrlStr" type="audio/mpeg">
+                            Seu navegador não suporta audio.
+                    </audio>
+                  </div>
+          
+                  <div class="col-12">
+                       <button class="btn btn-primary">Gostei</button>
+                       <button class="btn btn-primary">Não gostei</button>
+                       <button class="btn btn-primary">Compartilhar</button>
+                  </div>
+
+                </div>
+
+            </li>
+       }
+      </ul>
+    </p>
+</div>
