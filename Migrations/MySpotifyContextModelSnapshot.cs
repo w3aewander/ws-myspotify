@@ -21,10 +21,16 @@ namespace MvcApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Album")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Artista")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Autor")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Interprete")
+                    b.Property<string>("Genero")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Letra")
@@ -47,10 +53,10 @@ namespace MvcApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

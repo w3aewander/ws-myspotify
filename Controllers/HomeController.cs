@@ -22,7 +22,7 @@ namespace MvcApp.Controllers
         public IActionResult Index()
         {
             
-            ViewBag.musicas =  DB.Musicas.OrderBy(m => m.Titulo).ToList();
+            ViewBag.musicas =  DB.Musicas.ToList();
                                     
             return View();
         }

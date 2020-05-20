@@ -7,7 +7,6 @@ namespace MvcApp.Models
     {
         public DbSet<Musica> Musicas { get; set; }
         public DbSet<Usuario>  Usuarios { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=myspotify.db");
     }

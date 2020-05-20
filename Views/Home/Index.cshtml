@@ -23,24 +23,25 @@
 
                 <div class="col-9" >
                     <div class="">
-                       @m.Titulo 
+                       Gênero: @m.Genero  
                     </div>
                     <div class="">
-                       @m.Autor
+                       Album: @m.Album
                     </div>
                     <div class="">
-                        @m.Letra 
-                     </div>
-                   
+                       Artista: @m.Artista
                     </div>
-                </div>
+                    <div class="">
+                      Titulo: @m.UrlStr
+                    </div>
+                </div>  
 
                 <div class="row d-block text-center">
                 
                   <div clas="col-12">
-                    <audio controls >
-                        <source src="@m.UrlStr" type="audio/ogg">
-                        <source src="@m.UrlStr" type="audio/mpeg">
+                    <audio controls autoplay>
+  
+                        <source src= "/musicas/Artista/@m.Artista/@m.Album/@m.UrlStr" type="audio/mpeg">
                             Seu navegador não suporta audio.
                     </audio>
                   </div>
