@@ -1,0 +1,26 @@
+
+<h1>SpotiFy Controller</h1>
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Upload de Música
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <form action="/spotify/Upload" method="post" enctype="multipart/form-data">
+            <input type="text" id="Genero" name="Genero" class="form-control" placeholder="Gênero">
+            <input type="text" id="Artista" name="Artista"  class="form-control" placeholder="Artista">
+            <input type="text" id="Album" name="Album"  class="form-control" placeholder="Album">
+
+            <input type="file" name="upload" >
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+   
+

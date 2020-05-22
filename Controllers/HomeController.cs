@@ -7,35 +7,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MvcApp.Models;
 
-namespace MvcApp.Controllers
-{
-    public class HomeController : Controller
-    {
-        protected static MySpotifyContext DB = new MySpotifyContext();
+namespace MvcApp.Controllers {
+    public class HomeController : Controller {
+        protected static MySpotifyContext DB = new MySpotifyContext ();
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
+        public HomeController (ILogger<HomeController> logger) {
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            
-            ViewBag.musicas =  DB.Musicas.ToList();
-                                    
-            return View();
+        public IActionResult Index () {
+
+            ViewBag.musicas = DB.Musicas.ToList ();
+
+            return View ();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
+        public IActionResult Privacy () {
+            return View ();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [ResponseCache (Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error () {
+            return View (new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

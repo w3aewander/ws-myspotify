@@ -20526,6 +20526,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/administrador/projetos/CSHARP/MvcApp/Views/Spotify/Index.cshtml",
+      "TargetPath": "Views\\Spotify\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/administrador/projetos/CSHARP/MvcApp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
