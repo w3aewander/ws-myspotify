@@ -7,20 +7,6 @@ namespace MvcApp.Models {
         public DbSet<Usuario> Usuarios { get; set; }
         protected override void OnConfiguring (DbContextOptionsBuilder options) => options.UseSqlite ("Data Source=myspotify.db");
 
-        protected override void OnModelCreating (ModelBuilder modelBuilder) {
-
-            // modelBuilder.Entity<Musica> ()
-            //     .ToTable ("Musicas");
-
-            // modelBuilder.Entity<Musica> ()
-            //     .Property (b => b.Genero)
-            //     .IsRequired ();
-
-            // modelBuilder.Entity<Musica> ()
-            //     .Property (p => p.Regravacao)
-            //     .HasMaxLength (20);
-
-        }
     }
 
 }

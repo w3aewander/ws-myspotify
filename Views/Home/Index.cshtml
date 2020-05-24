@@ -1,61 +1,81 @@
-﻿@{
-    //ViewData["Title"] = "Home Page";
-    //var musicas = ViewData["musicas"];
+﻿@page
+@model MvcApp.Repositorio.Repositorio
 
-}
+<div class="container">
 
-<div class="text-center">
-    <h1 class="display-4">SPOTIFY</h1>
-    <p>
-      <h1>Minhas músicas</h1>
-     
-      <ul class="list-group">
-       @foreach(var m in ViewBag.musicas ){
-            <li class="list-group-item">
-                
-                <div class="row text-left">
-                
-                <div class="col-3">
-                    
-                      <img src="/img/speaker.png" alt="" class="img-thumbnail">
-                    
-                </div>
+       <div class="row ">
 
-                <div class="col-9" >
-                    <div class="">
-                       Gênero: @m.Genero  
-                    </div>
-                    <div class="">
-                       Album: @m.Album
-                    </div>
-                    <div class="">
-                       Artista: @m.Artista
-                    </div>
-                    <div class="">
-                      Titulo: @m.UrlStr
-                    </div>
-                </div>  
+       <div class="box-header">
+       <h1 class="text-white">Meu Spotify </h1>
+       <audio controls  id="player" hidden>
+              <source 
+                     src= "" 
+                     type="audio/mpeg">
+                     Seu navegador não suporta audio.
+       </audio>
 
-                <div class="row d-block text-center">
-                
-                  <div clas="col-12">
-                    <audio controls autoplay>
-  
-                        <source src= "/musicas/Artista/@m.Artista/@m.Album/@m.UrlStr" type="audio/mpeg">
-                            Seu navegador não suporta audio.
-                    </audio>
-                  </div>
-          
-                  <div class="col-12">
-                       <button class="btn btn-primary">Gostei</button>
-                       <button class="btn btn-primary">Não gostei</button>
-                       <button class="btn btn-primary">Compartilhar</button>
-                  </div>
+              <div class="p-4">
+              <div id="vumeter">
+                     <img src="/img/vu-meter.png" alt="" class="img-thumbnail" >
+              </div> 
+              </div>
 
-                </div>
+       </div>
 
-            </li>
-       }
-      </ul>
-    </p>
+       </div>
+
+       <div class="row  ">
+
+              <div class="box-list">
+
+                     <table class="table table-condensed table-stripped table-hover text-success">
+
+                            <thead class="bg-success text-white">
+                                   <tr>
+                                   <td>Gênero</td>
+                                   <td>Artista</td>
+                                   <td>Album</td>
+                                   <td>Título</td>
+                                   <td>Play</td>
+
+                                   </tr>
+                            </thead>
+
+                            <tbody>        
+                            
+                            @foreach( var  m  in   ViewBag.musicas ) {
+
+                            <tr>             
+                                   <td>
+                                          @m.Genero  
+                                   </td>
+
+                                   <td>
+                                          @m.Album
+                                   </td>
+                                   <td>
+                                          @m.Artista
+                                   </td>
+                                   <td class="text-left">
+                                          @m.UrlStr              
+                                   </td>  
+                                   <td>
+                                   <a class="btn btn-link" href="javascript:;" onclick="wsPlayMusic('/musicas/Artista/@m.Artista/@m.Album/@m.UrlStr', @m.Id);">
+                                   <div data-id="icon-play-stop-@m.Id">
+                                          <i class="fa fa-play"></i>
+                                   </div>
+                                   </a>
+                                   </td> 
+                            </tr>
+                     
+                            }
+                            
+                            </tbody>
+                     </table>
+
+              </div>
+
+       </div>
+
 </div>
+

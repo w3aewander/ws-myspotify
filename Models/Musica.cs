@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcApp.Models {
-    [Table ("Musicas")]
+
     public class Musica {
 
         public int Id { get; set; }
